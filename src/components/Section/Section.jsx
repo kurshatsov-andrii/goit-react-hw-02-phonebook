@@ -1,9 +1,18 @@
 import css from './Section.module.css';
 
-export const Section = ({ title, children }) => {
+export const Sectionh1 = ({ title, children }) => {
   return (
     <section className={css.section}>
-      <h2>{title}</h2>
+      <h1>{title}</h1>             
+      {children}
+    </section>
+  );
+};
+
+export const Sectionh2 = ({ title, children }) => {
+  return (
+    <section className={css.section}>
+      <h2>{title}</h2>             
       {children}
     </section>
   );

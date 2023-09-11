@@ -1,13 +1,15 @@
+import css from './Filter.module.css';
+
 export const Filter = ({ name, handleFilterChange }) => {
   return (
     <>
-      <p>Find contacts by name</p>
+      <p className={css.titlefind}>Find contacts by name</p>
       <input
         type="text"
         name="filter"
         value={name}
         onChange={handleFilterChange}
-        className="form-control"
+        className={css.formfind}
       />
     </>
   );

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { Section } from './Section/Section';
+import { Sectionh1, Sectionh2 } from './Section/Section';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import ContactForm from './ContactForm/ContactForm';
@@ -56,11 +56,11 @@ class App extends Component {
     const filteredContacts = this.getFilteredContacts();
     return (
       <div>
-        <Section title="Phonebook">
+        <Sectionh1 title="Phonebook">
           <ContactForm handleFormSubmit={this.handleFormSubmit} />
-        </Section>
+        </Sectionh1>
         {this.state.contacts.length >= 1 && (
-          <Section title="Contacts">
+          <Sectionh2 title="Contacts">
             <Filter
               name={this.state.filter}
               handleFilterChange={this.handleFilterChange}
@@ -69,7 +69,7 @@ class App extends Component {
               contacts={filteredContacts}
               handleDeleteButton={this.handleDeleteButton}
             />
-          </Section>
+          </Sectionh2>
         )}
       </div>
     );

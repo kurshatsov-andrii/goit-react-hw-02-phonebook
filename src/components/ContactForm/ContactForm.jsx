@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import css from './ContactForm.module.css';
 
 class ContactForm extends Component {
   state = {
@@ -23,9 +24,9 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="exampleInputName1" className="form-label">
+      <form onSubmit={this.handleSubmit} className={css.formdata}>
+        <div>
+          <label htmlFor="exampleInputName1" className={css.formlabel}>
             Name
           </label>
           <input
@@ -35,15 +36,14 @@ class ContactForm extends Component {
             pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
-            className="form-control"
+            className={css.forminput}
             id="exampleInputName1"
             aria-describedby="emailHelp"
             onChange={this.handleChange}
           />
-          <div className="mb-3">
-            <label htmlFor="exampleInputNumber1" className="form-label">
+            <label htmlFor="exampleInputNumber1" className={css.formlabel}>
               Number
-            </label>
+          </label>
             <input
               type="tel"
               name="number"
@@ -51,15 +51,14 @@ class ContactForm extends Component {
               pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
-              className="form-control"
+              className={css.forminput}
               id="exampleInputNumber1"
               aria-describedby="emailHelp"
               onChange={this.handleChange}
-            />
-          </div>
+        />            
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className={css.addcontactbtn}>
           Add contact
         </button>
       </form>
